@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bantercore
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MUZE_JWT_SECRET
+        generateValue: true

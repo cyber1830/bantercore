@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bantercore is a focused space for thoughtful technical discussions.">
+  <title>Bantercore | Ideas worth answering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">b</span><span>bantercore</span></a><span class="status"><i></i> live community</span></header>
+  <main class="layout">
+    <section class="intro"><p class="eyebrow">A small internet for big ideas</p><h1>Say something<br><em>worth answering.</em></h1><p class="lede">A focused space for engineers and curious people to trade useful context, sharp opinions, and better questions.</p><div class="signal"><span class="signal-icon">~</span><span><strong id="count">0</strong> conversations in the room</span></div></section>
+    <section class="feed" aria-labelledby="feed-title"><div class="feed-heading"><div><p class="eyebrow">The room</p><h2 id="feed-title">Latest banter</h2></div><button class="refresh" id="refresh" title="Refresh discussions">↻</button></div>
+      <form class="composer" id="composer"><input id="topic" name="topic" maxlength="80" placeholder="Topic, e.g. Go, product, systems" required><textarea id="body" name="body" maxlength="500" placeholder="What are you thinking about?" required></textarea><div class="compose-footer"><span id="chars">0 / 500</span><button type="submit">Start a discussion <span>→</span></button></div></form>
+      <div id="discussions" class="discussions" aria-live="polite"><p class="loading">Loading the room...</p></div>
+    </section>
+  </main>
+  <footer><span>Built for meaningful exchange.</span><span>Go API · JWT auth · event-ready</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
