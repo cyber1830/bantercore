@@ -31,6 +31,12 @@ func (c *NoopCache) Set(_ context.Context, key string, value []discussions.Discu
 	c.data[key] = value
 }
 
+func (c *NoopCache) Delete(_ context.Context, key string) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	delete(c.data, key)
+}
+
 type LogPublisher struct {
 	logger *slog.Logger
 }

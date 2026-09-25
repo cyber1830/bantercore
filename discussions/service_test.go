@@ -14,6 +14,8 @@ func (testCache) Get(context.Context, string) ([]Discussion, bool) {
 
 func (testCache) Set(context.Context, string, []Discussion, time.Duration) {}
 
+func (testCache) Delete(context.Context, string) {}
+
 type testPublisher struct{}
 
 func (testPublisher) Publish(context.Context, string, any) error {

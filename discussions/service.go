@@ -25,6 +25,7 @@ type Store interface {
 type Cache interface {
 	Get(context.Context, string) ([]Discussion, bool)
 	Set(context.Context, string, []Discussion, time.Duration)
+	Delete(context.Context, string)
 }
 
 type Publisher interface {
@@ -57,6 +58,7 @@ func (s *Service) Create(ctx context.Context, author, topic, body string) (Discu
 	if err := s.store.Create(ctx, discussion); err != nil {
 		return Discussion{}, err
 	}
+	s.cache.Delete(ctx, "discussions")
 	_ = s.publisher.Publish(ctx, "discussion.created", discussion)
 	return discussion, nil
 }
